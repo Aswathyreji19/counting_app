@@ -1,28 +1,30 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-counter',
-  standalone: true, // ✅ ALSO IMPORTANT
+   standalone: true,
+  imports: [CommonModule],
   templateUrl: './counter.component.html',
   styleUrls: ['./counter.component.css'],
 })
 export class CounterComponent {
-  counter: number = 0;
+  counter = 0;
   history: string[] = [];
 
   increment() {
     this.counter++;
-    this.history.unshift(`[+1] Counter is now ${this.counter}`);
+    this.history.push(`[+1] Counter is now ${this.counter}`);
   }
 
   decrement() {
     this.counter--;
-    this.history.unshift(`[-1] Counter is now ${this.counter}`);
+    this.history.push(`[-1] Counter is now ${this.counter}`);
   }
 
   reset() {
     this.counter = 0;
-    this.history.unshift(`[Reset] Counter is now ${this.counter}`);
+    this.history.push(`[Reset] Counter is now ${this.counter}`);
   }
 
   clearHistory() {

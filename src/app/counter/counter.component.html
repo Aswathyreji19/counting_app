@@ -1,16 +1,31 @@
-<div class="container">
-  <h2>{{ counter }}</h2>
 
-  <div class="buttons">
-    <button (click)="increment()">➕ Increment</button>
-    <button (click)="decrement()">➖ Decrement</button>
-    <button (click)="reset()">🔄 Reset</button>
-  </div>
+    <div class="container">
 
-  <h3>History</h3>
-  <ul>
-    <li *ngFor="let entry of history">{{ entry }}</li>
-  </ul>
 
-  <button (click)="clearHistory()">🗑 Clear History</button>
-</div>
+      <div class="counter-box">
+        <h2>Counter: {{ counter }}</h2>
+
+        <div class="button-group">
+          <button class="btn increment" (click)="increment()">
+            <i class="fas fa-plus"></i> Increment
+          </button>
+          <button class="btn decrement" (click)="decrement()">
+            <i class="fas fa-minus"></i> Decrement
+          </button>
+          <button class="btn reset" (click)="reset()">
+            <i class="fas fa-rotate-right"></i> Reset
+          </button>
+        </div>
+      </div>
+
+      <h3>History</h3>
+      <ul>
+        <li *ngFor="let item of history; let i = index">
+          {{ i + 1 }}. {{ item }}
+        </li>
+      </ul>
+
+      <button class="btn clear" (click)="clearHistory()">
+        <i class="fas fa-trash"></i> Clear History
+      </button>
+    </div>
