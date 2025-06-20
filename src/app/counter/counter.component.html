@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>{{ counter }}</h2>
+
+  <div class="buttons">
+    <button (click)="increment()">➕ Increment</button>
+    <button (click)="decrement()">➖ Decrement</button>
+    <button (click)="reset()">🔄 Reset</button>
+  </div>
+
+  <h3>History</h3>
+  <ul>
+    <li *ngFor="let entry of history">{{ entry }}</li>
+  </ul>
+
+  <button (click)="clearHistory()">🗑 Clear History</button>
+</div>
